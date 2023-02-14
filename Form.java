@@ -12,15 +12,67 @@ public class Form {
 
     JMenuBar menuBar = new JMenuBar();
     JMenu fileMenu = new JMenu("File");
+    JMenuItem newMenuItem = new JMenuItem("New File");
+    JMenuItem saveMenuItem = new JMenuItem("Save File");
+    JMenuItem openMenuItem = new JMenuItem("Open File");
     JMenuItem exitMenuItem = new JMenuItem("Exit");
+
+    JMenu editMenu = new JMenu("Edit");
+    JMenuItem undoMenuItem = new JMenuItem("Undo");
+    JMenuItem redoMenuItem = new JMenuItem("Redo");
+    JMenuItem cutMenuItem = new JMenuItem("Cut");
+    JMenuItem copyMenuItem = new JMenuItem("Copy");
+    JMenuItem pasteMenuItem = new JMenuItem("Paste");
+
+    JMenu viewMenu = new JMenu("View");
+    JMenuItem cmdMenuItem = new JMenuItem("Command");
+    JMenuItem layoutMenuItem = new JMenuItem("Layout");
+    JMenuItem colorMenuItem = new JMenuItem("Colors");
+    JMenuItem formatMenuItem = new JMenuItem("Format");
+    JMenuItem fontMenuItem = new JMenuItem("Fonts");
+
+    JMenu runMenu = new JMenu("Run");
+    JMenuItem runMenuItem = new JMenuItem("Command");
+    JMenuItem debugMenuItem = new JMenuItem("Layout");
+    JMenuItem stopMenuItem = new JMenuItem("Colors");
+    JMenuItem restartMenuItem = new JMenuItem("Format");
+    JMenuItem resetMenuItem = new JMenuItem("Fonts");
+
     exitMenuItem.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         System.exit(0);
       }
     });
-    fileMenu.add(exitMenuItem);
     menuBar.add(fileMenu);
+    fileMenu.add(newMenuItem);
+    fileMenu.add(saveMenuItem);
+    fileMenu.add(openMenuItem);
+    fileMenu.addSeparator();
+    fileMenu.add(exitMenuItem);
+
+    menuBar.add(editMenu);
+    editMenu.add(undoMenuItem);
+    editMenu.add(redoMenuItem);
+    editMenu.add(cutMenuItem);
+    editMenu.add(copyMenuItem);
+    editMenu.add(pasteMenuItem);
+
+    menuBar.add(viewMenu);
+    viewMenu.add(cmdMenuItem);
+    viewMenu.add(layoutMenuItem);
+    viewMenu.add(colorMenuItem);
+    viewMenu.add(formatMenuItem);
+    viewMenu.add(fontMenuItem);
+
+    menuBar.add(runMenu);
+    runMenu.add(runMenuItem);
+    runMenu.add(debugMenuItem);
+    runMenu.add(stopMenuItem);
+    runMenu.add(restartMenuItem);
+    runMenu.addSeparator();
+    runMenu.add(resetMenuItem);
+
     frame.setJMenuBar(menuBar);
 
     JLabel heading = new JLabel("Form");
