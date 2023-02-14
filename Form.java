@@ -44,6 +44,8 @@ public class Form {
         System.exit(0);
       }
     });
+
+     
     menuBar.add(fileMenu);
     fileMenu.add(newMenuItem);
     fileMenu.add(saveMenuItem);
@@ -195,7 +197,7 @@ public class Form {
     // frame.add(submitButton);
 
     JButton submitButton = new JButton("Submit");
-    submitButton.setBounds(150, 500, 100, 25);
+    submitButton.setBounds(120, 500, 100, 25);
     submitButton.setBackground(Color.BLUE);
     submitButton.setForeground(Color.WHITE);
     submitButton.setFont(new Font("Arial", Font.BOLD, 14));
