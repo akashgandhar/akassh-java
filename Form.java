@@ -1,5 +1,5 @@
 import java.awt.*;
-
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Form {
@@ -9,6 +9,19 @@ public class Form {
     frame.setSize(350, 600);
     frame.setLayout(null);
     frame.setResizable(false);
+
+    JMenuBar menuBar = new JMenuBar();
+    JMenu fileMenu = new JMenu("File");
+    JMenuItem exitMenuItem = new JMenuItem("Exit");
+    exitMenuItem.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        System.exit(0);
+      }
+    });
+    fileMenu.add(exitMenuItem);
+    menuBar.add(fileMenu);
+    frame.setJMenuBar(menuBar);
 
     JLabel heading = new JLabel("Form");
     heading.setBounds(150, 10,
@@ -121,12 +134,41 @@ public class Form {
     frame.add(option7);
     frame.add(option8);
 
+    // JButton submitButton = new JButton("Submit");
+    // submitButton.setBounds(120, 500, 100, 25);
+    // submitButton.setBackground(Color.cyan);
+    // submitButton.setForeground(Color.BLACK);
+    // submitButton.setCursor(new Cursor(12));
+    // submitButton.setFont(new Font("Arial", Font.BOLD, 14));
+    // frame.add(submitButton);
+
     JButton submitButton = new JButton("Submit");
-    submitButton.setBounds(120, 500, 100, 25);
-    submitButton.setBackground(Color.cyan);
-    submitButton.setForeground(Color.BLACK);
-    submitButton.setCursor(new Cursor(12));
+    submitButton.setBounds(150, 500, 100, 25);
+    submitButton.setBackground(Color.BLUE);
+    submitButton.setForeground(Color.WHITE);
     submitButton.setFont(new Font("Arial", Font.BOLD, 14));
+    submitButton.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        // code to be executed when button is clicked
+      }
+    });
+    submitButton.addKeyListener(new KeyListener() {
+      @Override
+      public void keyTyped(KeyEvent e) {
+        // code to be executed when a key is typed
+      }
+
+      @Override
+      public void keyPressed(KeyEvent e) {
+        submitButton.setBackground(Color.CYAN);
+      }
+
+      @Override
+      public void keyReleased(KeyEvent e) {
+        // code to be executed when a key is released
+      }
+    });
     frame.add(submitButton);
     // Add components here
 
