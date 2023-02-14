@@ -45,7 +45,9 @@ public class Form {
       }
     });
 
-     
+    
+
+    
     menuBar.add(fileMenu);
     fileMenu.add(newMenuItem);
     fileMenu.add(saveMenuItem);
@@ -225,6 +227,17 @@ public class Form {
     });
     frame.add(submitButton);
     // Add components here
+
+    newMenuItem.addActionListener(new ActionListener(){
+
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        heading.setText("New Form");
+        heading.setBounds(100, 10, 200, 20);
+        
+      }
+      
+    });
 
     frame.setVisible(true);
   }
