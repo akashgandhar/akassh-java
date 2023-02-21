@@ -45,9 +45,6 @@ public class Form {
       }
     });
 
-    
-
-    
     menuBar.add(fileMenu);
     fileMenu.add(newMenuItem);
     fileMenu.add(saveMenuItem);
@@ -203,12 +200,14 @@ public class Form {
     submitButton.setBackground(Color.BLUE);
     submitButton.setForeground(Color.WHITE);
     submitButton.setFont(new Font("Arial", Font.BOLD, 14));
+
     submitButton.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
         // code to be executed when button is clicked
       }
     });
+
     submitButton.addKeyListener(new KeyListener() {
       @Override
       public void keyTyped(KeyEvent e) {
@@ -228,16 +227,27 @@ public class Form {
     frame.add(submitButton);
     // Add components here
 
-    newMenuItem.addActionListener(new ActionListener(){
+    newMenuItem.addActionListener(new ActionListener() {
 
       @Override
       public void actionPerformed(ActionEvent e) {
         heading.setText("New Form");
-        heading.setBounds(100, 10, 200, 20);
-        
+        heading.setBounds(100, 10, 150, 20);
+
       }
-      
+
     });
+
+    ActionListenerAdapter submitButtonAdapter = new ActionListenerAdapter() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        submitButton.setText("Clicked By Adapter");
+        submitButton.setBounds(15, 500, 300, 20);
+        // do something when the button is clicked
+      }
+    };
+    submitButton.addActionListener(submitButtonAdapter);
+
 
     frame.setVisible(true);
   }
